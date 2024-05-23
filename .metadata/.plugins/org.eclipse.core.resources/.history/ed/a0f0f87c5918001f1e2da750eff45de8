@@ -1,0 +1,5 @@
+package ontap4.entity;
+
+public class Staff {
+
+}

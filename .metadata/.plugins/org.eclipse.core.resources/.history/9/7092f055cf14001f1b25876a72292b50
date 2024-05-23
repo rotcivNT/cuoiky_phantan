@@ -1,0 +1,10 @@
+package ontap1.services;
+
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
+import ontap1.entity.Food;
+
+public interface FoodServices extends Remote {
+	public boolean addFood(Food food) throws RemoteException;
+}

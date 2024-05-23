@@ -1,0 +1,10 @@
+package ontap2.entity;
+
+import java.time.LocalDate;
+
+public class Experience {
+	private String companyName;
+	private LocalDate fromDate;
+	private LocalDate toDate;
+	private String description;
+}

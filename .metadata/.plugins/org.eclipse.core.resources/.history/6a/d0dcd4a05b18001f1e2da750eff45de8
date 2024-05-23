@@ -1,0 +1,13 @@
+package ontap4.entity;
+
+import jakarta.persistence.AttributeOverride;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+import jakarta.persistence.PrimaryKeyJoinColumn;
+
+@Entity
+@PrimaryKeyJoinColumn(name = "customer_id")
+public class Customer extends Person {
+	@Embedded
+	private Address address;
+}

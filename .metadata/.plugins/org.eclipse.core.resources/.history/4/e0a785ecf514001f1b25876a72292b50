@@ -1,0 +1,28 @@
+package ontap2.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "candidates")
+public class Candidate {
+	@Id
+	@Column(name = "candidate_id")
+	private String id;
+	
+	@Column(name = "full_name")
+	private String fullName;
+	
+	@Column(name = "year_of_birth")
+	private String yearOfBirth;
+	
+	private String gender;
+	
+	private String email;
+	
+	private String phone;
+	
+	private String desscription;
+}

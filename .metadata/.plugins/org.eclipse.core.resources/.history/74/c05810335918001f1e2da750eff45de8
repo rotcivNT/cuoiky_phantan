@@ -1,0 +1,12 @@
+package ontap4.entity;
+
+import jakarta.persistence.Embedded;
+
+public abstract class Person {
+	protected int id;
+	protected String firstName;
+	protected String lastName;
+	
+	@Embedded
+	protected Contact contact;
+}

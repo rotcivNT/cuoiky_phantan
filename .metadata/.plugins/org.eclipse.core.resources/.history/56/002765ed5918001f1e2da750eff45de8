@@ -1,0 +1,8 @@
+package ontap4.entity;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Staff extends Person {
+	private byte active;
+}

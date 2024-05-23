@@ -1,0 +1,9 @@
+package ontap1.dao;
+
+import java.io.Serializable;
+
+import ontap1.services.FoodServices;
+
+public class FoodDao implements FoodServices, Serializable {
+	
+}

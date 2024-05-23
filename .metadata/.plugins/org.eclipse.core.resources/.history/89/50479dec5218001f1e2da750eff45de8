@@ -1,0 +1,8 @@
+import ontap3.dao.BookDao;
+
+public class Main {
+	public static void main(String[] args) {
+		BookDao book_dao = new BookDao();
+		book_dao.listRatedBooks("Erich Gamma", 3).forEach(System.out::println);
+	}
+}

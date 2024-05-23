@@ -1,0 +1,15 @@
+package ontap1.entity;
+
+import jakarta.persistence.Column;
+import ontap1.enums.Type;
+
+public class Food extends Item {
+	
+	private Type type;
+	
+	@Column(name = "preparation_time")
+	private int preparationTime;
+	
+	@Column(name = "serving_time")
+	private int servingTime;
+}

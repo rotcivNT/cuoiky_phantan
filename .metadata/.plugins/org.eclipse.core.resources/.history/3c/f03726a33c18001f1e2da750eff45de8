@@ -1,0 +1,13 @@
+package ontap3.entity;
+
+import java.util.Set;
+
+public class Book {
+	private String ISBN;
+	private String name;
+	private int publistYear;
+	private int numOfPages;
+	private double price;
+	protected Set<String> authors;
+	protected Publisher publisher;
+}

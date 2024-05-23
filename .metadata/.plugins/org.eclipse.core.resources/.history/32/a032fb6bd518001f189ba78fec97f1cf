@@ -1,0 +1,30 @@
+package entity;
+
+import java.util.Set;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorColumn;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.OneToMany;
+
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "role", discriminatorType = jakarta.persistence.DiscriminatorType.STRING)
+public class User {
+	@Id
+	@Column(name = "user_name")
+	private String username;
+	
+	@Column(name = "password")
+	private String password;
+	
+	@Column(name = "email")
+	private String email;
+	
+
+	@OneToMany(mappedBy = "user")
+	private Set<Comments> comments;
+}

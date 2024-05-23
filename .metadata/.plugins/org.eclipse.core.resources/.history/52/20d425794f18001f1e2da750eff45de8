@@ -1,0 +1,49 @@
+package ontap3.entity;
+
+import java.util.List;
+import java.util.Set;
+
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "books")
+@Inheritance(strategy = InheritanceType.JOINED)
+public class Book {
+	@Id
+	protected String ISBN;
+	
+	@Column(name = "name")
+	protected String name;
+	
+	@Column(name = "publish_year")
+	protected int publishYear;
+	
+	@Column(name = "num_of_pages")
+	protected int numOfPages;
+	
+	@Column(name = "price")
+	protected double price;
+	
+	@ElementCollection
+	@Id
+	@CollectionTable(name = "books_authors", joinColumns = @JoinColumn(name = "ISBN"))
+	@Column(name = "author", nullable = false)
+	protected Set<String> authors;
+	
+	@ManyToOne
+	@JoinColumn(name = "publisher_id")
+	protected Publisher publisher;
+	
+	@OneToMany(mappedBy = "book")
+	protected List<Reviews> reviews;
+}

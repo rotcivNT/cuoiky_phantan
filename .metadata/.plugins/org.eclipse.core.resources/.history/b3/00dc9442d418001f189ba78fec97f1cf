@@ -1,0 +1,8 @@
+package entity;
+
+import jakarta.persistence.DiscriminatorValue;
+
+@DiscriminatorValue("admin")
+public class Admin extends User {
+	
+}

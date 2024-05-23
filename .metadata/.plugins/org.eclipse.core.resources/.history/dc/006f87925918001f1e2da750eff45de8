@@ -1,0 +1,17 @@
+package ontap4.entity;
+
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public abstract class Person {
+	protected int id;
+	protected String firstName;
+	protected String lastName;
+	
+	@Embedded
+	protected Contact contact;
+}

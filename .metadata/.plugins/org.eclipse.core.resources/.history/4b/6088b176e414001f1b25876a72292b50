@@ -1,0 +1,16 @@
+package ontap1;
+
+import java.rmi.RemoteException;
+
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+import ontap1.dao.FoodDao;
+
+public class Main {
+
+	public static void main(String[] args) throws RemoteException {
+		// TODO Auto-generated method stub
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("ontap1");
+	}
+
+}

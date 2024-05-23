@@ -1,0 +1,15 @@
+package entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "posts")
+public class Post {
+	private String id;
+	private String title;
+	private String content;
+	private int views;
+	private int likes;
+	private int shares;
+}
